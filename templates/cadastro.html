@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Cadstro de Professor{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Olá, {% if name %}{{ name }}{% else %}Professor{% endif %}!</h1>
+    {% if not known %}
+    <p>Cadastro realizado com sucesso!</p>
+    {% else %}
+    <p>Já possui cadastro</p>
+    {% endif %}
+</div>
+{{ wtf.quick_form(form) }}
+{% endblock %}
